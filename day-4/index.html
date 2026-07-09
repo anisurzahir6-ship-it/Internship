@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            width:350px;
+            margin:auto;
+            border:2px solid red;
+            border-radius:10px;
+        }
+
+        #container>div{
+            display:flex;
+            justify-content:center;
+        }
+
+        #container>div>div{
+            width:55px;
+            height:180px;
+            border:1px solid gray;
+            border-radius:20px;
+            background:#f0f0f0;
+        }
+
+        .child1{
+            background-color:yellow !important;
+        }
+
+        .child2{
+            height:400px !important;
+        }
+
+        .child3{
+            height:150px !important;
+        }
+
+        .child4{
+            height:80px !important;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+
+    <div>
+        <div class="child1"></div>
+        <div></div>
+    </div>
+
+    <div>
+        <div class="child1 child2"></div>
+        <div class="child2"></div>
+    </div>
+
+    <div>
+        <div class="child3"></div>
+        <div class="child3"></div>
+    </div>
+
+    <div>
+        <div class="child4"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Times New Roman, serif;
+        }
+
+        h1{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        #container{
+            width:50%;
+            margin:50px auto;
+            padding:15px;
+            border:2px solid blue;
+            border-radius:5px;
+
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            align-items:center;
+
+            box-shadow:
+                rgba(255,0,0,0.8) 10px -10px,
+                rgba(255,140,0,0.8) 20px -20px,
+                rgba(255,215,0,0.8) 30px -30px,
+                rgba(50,205,50,0.8) 40px -40px;
+        }
+
+        .child{
+            width:150px;
+            height:150px;
+            margin:10px;
+            border-radius:10px;
+            background-color:yellowgreen;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            box-shadow:
+                rgba(240,46,170,0.4) -5px 5px,
+                rgba(240,46,170,0.3) -10px 10px,
+                rgba(240,46,170,0.2) -15px 15px,
+                rgba(240,46,170,0.1) -20px 20px,
+                rgba(240,46,170,0.05) -25px 25px;
+        }
+
+        .blank{
+            width:150px;
+            height:150px;
+            margin:10px;
+            visibility:hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Flex Box</h1>
+
+    <div id="container">
+
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+
+        <div class="blank"></div>
+        <div class="child">Box</div>
+        <div class="child">Box</div>
+        <div class="blank"></div>
+
+    </div>
+
+</body>
+</html>
