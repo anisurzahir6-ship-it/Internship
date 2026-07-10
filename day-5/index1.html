@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.parent-box > p {
+  background-color: lightyellow;
+  border: 2px solid orange;
+}
+
+.parent-box2  p {
+  background-color: lightyellow;
+  border: 2px solid orange;
+}
+
+p + p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+        
+</style>
+<body>
+    <!-- combinators
+     :
+     decendent combinator -> Descendant(space)Any nested element at any depthdiv p
+     Child>Immediate children onlydiv > p
+    Adjacent Sibling+The very next sibling elementdiv + p
+    General Sibling~All following sibling elementsdiv ~ p
+     -->
+    <h1>Child combinator</h1>
+<article class="parent-box">
+  <p>This is a direct child paragraph. (First-level)</p>
+  
+  <div class="callout-box">
+    <p>This is a nested grandchild paragraph. (Second-level)</p>
+  </div>
+</article>
+
+<h1>decendent combinator</h1>
+<article class="parent-box2">
+  <p>This is a direct child paragraph. (First-level)</p>
+  
+  <div class="callout-box2">
+    <p>This is a nested grandchild paragraph. (Second-level)</p>
+  </div>
+</article>
+
+<h1>Adjacent Sibling combinator</h1>
+<div class="content-wrapper">
+  <h1>Main Article Title</h1>
+  <p>This is the first paragraph. It directly follows the heading.</p>
+  
+  <p>This is the second paragraph. It follows another paragraph.</p>
+</div>
+
+</body>
+</html>
