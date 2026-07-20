@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="user-input">
+    <button id="submit">submit</button>
+    <p id="display"></p>
+</body>
+<script>
+    const btn = document.getElementById("submit");
+    let display = document.getElementById("display");
+    let result = "";
+
+    btn.addEventListener('click', () => {
+        let userInput = Number(document.getElementById("user-input").value);
+        console.log(userInput);
+        if (Number.isNaN(userInput)) {
+            result = "invalid input";
+        } else if (userInput % 3 == 0 && userInput % 5 == 0) {
+            result = "Humpty Dumpty"
+        }
+        else if (userInput % 5 == 0) {
+            result = "Dumpty"
+        }
+        else if (userInput % 3 == 0) {
+            result = "Humpty"
+        }
+        else {
+            result = "invalid"
+        }
+        display.textContent = result;
+    })
+
+</script>
+
+</html>
