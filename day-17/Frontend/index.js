@@ -1,6 +1,6 @@
 const fetchData = async () => {
 
-    const res = await fetch("http://localhost:8000/api/users", {
+    const res = await fetch("https://internship-8ed2.onrender.com/api/users", {
         method: "GET",
         headers: {
             "Authorization": "Bearer " + localStorage.getItem("token")

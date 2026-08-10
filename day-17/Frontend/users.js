@@ -13,7 +13,7 @@ const nextBtn = document.getElementById("nextBtn");
 const getUsers = async () => {
     // const token = localStorage.getItem("token");
 
-    const response = await fetch(`http://localhost:8000/api/users?page=${currentPage}&limit=${limit}`, {
+    const response = await fetch(`https://internship-8ed2.onrender.com/api/users?page=${currentPage}&limit=${limit}`, {
         method: "GET",
         headers: {
     "Authorization": "Bearer " + localStorage.getItem("token")
