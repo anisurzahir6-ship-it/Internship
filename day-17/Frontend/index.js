@@ -1,28 +1,39 @@
-const fetchData = async() =>{
-    const res = await fetch("http://localhost:8000/api/users");
+const fetchData = async () => {
+
+    const res = await fetch("http://localhost:8000/api/users", {
+        method: "GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        }
+    });
 
     const response = await res.json();
 
-   renderData(response)
+    renderData(response.users);   // ✅ FIX
 }
 
-function renderData(data){
+function renderData(data) {
+
     const parent = document.getElementById("container");
+    parent.innerHTML = ""; // clear old data
 
-    data.forEach((el, i) => {
-            const childDiv = document.createElement("div");
-            childDiv.style.border="1px solid green";
+    data.forEach((el) => {
 
-            const name = document.createElement("p");
-            name.innerText=`Name:- ${el.name}`;
+        const childDiv = document.createElement("div");
+        childDiv.style.border = "1px solid green";
 
-            const uni = document.createElement("p");
-            uni.innerText=`University:- ${el.uni}`;
+        const name = document.createElement("p");
+        name.innerText = `Name:- ${el.fullName}`;   // ✅ FIX
 
-            childDiv.append(name, uni);
-            parent.append(childDiv)
+        const email = document.createElement("p");
+        email.innerText = `Email:- ${el.email}`;   // ✅ FIX
+
+        const phone = document.createElement("p");
+        phone.innerText = `Phone:- ${el.phoneNumber}`;   // ✅ FIX
+
+        childDiv.append(name, email, phone);
+        parent.append(childDiv);
     });
 }
 
 fetchData();
-

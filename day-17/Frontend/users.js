@@ -56,7 +56,7 @@ const getUsers = async () => {
         prevBtn.disabled = false;
     }
 
-    if (currentPage == res.totalPages) {
+    if (currentPage == data.totalPages) {
         nextBtn.disabled = true;
     } else {
         nextBtn.disabled = false;
