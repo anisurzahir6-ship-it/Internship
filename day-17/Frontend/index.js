@@ -1,5 +1,5 @@
 const fetchData = async() =>{
-    const res = await fetch("http://localhost:8000/users");
+    const res = await fetch("http://localhost:8000/api/users");
 
     const response = await res.json();
 
@@ -25,3 +25,4 @@ function renderData(data){
 }
 
 fetchData();
+
