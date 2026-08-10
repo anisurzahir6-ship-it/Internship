@@ -44,7 +44,7 @@ const userLogin = async(req, res) =>{
         if(existUser){
             bcrypt.compare(password, existUser.password, function(err, result) {
                 if(result){
-                    const token = jwt.sign({ userId: existUser._id }, "PBEL", { expiresIn: '5h' });
+                    const token =jwt.sign({ userId: existUser._id }, process.env.JWT_SECRET, { expiresIn: '5h' });
                     res.status(200).send({ "message": "Login is successful", user:{user:existUser, token} })
                 } else {
                     res.status(400).send({ "message": "Invalid credentials" })
@@ -63,7 +63,7 @@ const userLogin = async(req, res) =>{
 const changePassword = async(req, res) => {
     const { oldPassword, newPassword } = req.body;
 
-    const { userId } = req.headers;
+    const userId = req.userId;
 
     const existUser = await userModel.findById(userId);
 

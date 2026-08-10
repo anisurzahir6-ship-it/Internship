@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 app.use("/api", userRouter)
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, async() => {
     try {
